@@ -27,7 +27,7 @@ const data = [
       'The HR Request Tracker consists of a Google Form that allows employees to submit their concerns, which are automatically stored in a connected Google Sheet. This sheet is accessible to the HR team, who can update only the status of each request. Power BI then provides insights into the submitted requests—such as pending issues, the most frequent types of requests by department, category trends, and how often different issues are logged over time.',
     tags: ['google sheet', 'power bi'],
     liveVersion: 'https://app.powerbi.com/view?r=eyJrIjoiYzJiOGRhZjgtOGYzOS00NTA4LWE1M2UtMmI2NTY1MzZhMGQ0IiwidCI6ImQ5NDZmYzkzLWFmNzAtNGU4Yy1hYmRjLTZlOWFhNDQxYmUwZSIsImMiOjF9',
-    sourceLink: 'https://github.com',
+    sourceLink: 'https://github.com/ayekor/HR-Requests-Tracker',
   },
   /*
   {
