@@ -1,21 +1,22 @@
-const toggle = document.querySelector('#toggle');
-const nav = document.querySelector('.nav');
-const portfolioContainer = document.querySelector('#portfolio');
-const modal = document.querySelector('.modal-wrapper');
-let menuOpen = false;
+const hamburgerBtn = document.querySelector('#hamburger-btn');
+const siteNav = document.querySelector('.site-nav');
+const projectsGrid = document.querySelector('#projects');
+const overlayWrapper = document.querySelector('.overlay-wrapper');
+let isMenuOpen = false;
 
-toggle.addEventListener('click', () => {
-  if (!menuOpen) {
-    toggle.classList.add('open');
-    menuOpen = true;
+hamburgerBtn.addEventListener('click', () => {
+  if (!isMenuOpen) {
+    hamburgerBtn.classList.add('open');
+    isMenuOpen = true;
   } else {
-    toggle.classList.remove('open');
-    menuOpen = false;
+    hamburgerBtn.classList.remove('open');
+    isMenuOpen = false;
   }
-  nav.classList.toggle('open');
+  siteNav.classList.toggle('open');
 });
-/* popup-window */
-const data = [
+
+/* project data */
+const projectData = [
   {
     id: 1,
     title: 'HR Requests Tracker',
@@ -29,189 +30,128 @@ const data = [
     liveVersion: 'https://app.powerbi.com/view?r=eyJrIjoiYTQxMzRmMWYtNTNkMC00NzA1LWFkYzEtN2Y4YjlhNTA3YTdhIiwidCI6ImQ5NDZmYzkzLWFmNzAtNGU4Yy1hYmRjLTZlOWFhNDQxYmUwZSIsImMiOjF9',
     sourceLink: 'https://github.com/ayekor/HR-Requests-Tracker',
   },
-  /*
-  {
-    id: 2,
-    title: 'To-Do List',
-    sub_title: 'Daily Activity',
-    project_type: 'Front End Dev',
-    project_date: '2023',
-    img: 'todolist.png',
-    description:
-      'To-do-list is a project done for the activity To Do list: list structure of the Microverse Program. The goal is to learn use WEBPACK, JavaScript ES6, and UNIT TESTING using JEST.',
-    tags: ['html', 'css', 'javascript'],
-    liveVersion: 'https://queenterjuma.github.io/To-do-list.github.io/dist/',
-    sourceLink: 'https://github.com/QueenterJuma/To-do-list.github.io',
-  },
-  {
-    id: 3,
-    title: 'CORPORATE VALUE CHAIN INNOVATION AND R&D LEADERS LIVEWORX 2023',
-    sub_title: 'HTML/CSS CAPSTONE',
-    project_type: 'Front End Dev',
-    project_date: '2023',
-    img: '@tric.png',
-    description:
-      'The goal of this project is to create a UI Capstone project and use Flexbox to place elements on the page. Also, adding images and backgrounds to enhance the look of the website.',
-    tags: ['html', 'css', 'javascript'],
-    liveVersion: 'https://queenterjuma.github.io/Capstone_one.github.io/',
-    sourceLink: 'https://github.com/QueenterJuma/Capstone_one.github.io',
-  },
-  {
-    id: 4,
-    title: 'AWESOME BOOKS',
-    sub_title: 'BOOK STORE',
-    project_type: "'Front End Dev",
-    project_date: '2023',
-    img: 'owesome.png',
-    description:
-      'Awesome-book is a basic website that allows users to add/remove books from a list.',
-    tags: ['html', 'css', 'javascript'],
-    liveVersion: 'https://queenterjuma.github.io/-Awsome-book/',
-    sourceLink: 'https://github.com/QueenterJuma/-Awsome-book',
-  },
-  */
 ];
 
-function listAllProjects() {
-  let projectHtml = '';
-  data.forEach((project) => {
-    let tagsHtml = '';
-    if (project.tags.length) {
-      project.tags.forEach((tag) => {
-        tagsHtml += `<li><a href="#">${tag}</a></li>`;
-      });
-    }
-    projectHtml += `<div class="card-container one">
-        
-        <div class="card-content">
-          <h3>${project.title}</h3>
-          <ul class="institution">
-            <li><a href="#" class="canopy">${project.sub_title}</a></li>
-            <div class="dot"></div>
-            <li><a href="#" class="year">${project.project_type}</a></li>
-            <div class="dot"></div>
-            <li><a href="#" class="year">${project.project_date}</a></li>
-          </ul>
-          <p>
-           ${project.description}
-          </p>
-          <ul class="tech">
-            ${tagsHtml}
-          </ul>
-           <a href = "#linked" ><button id="${project.id}">See Project</button></a>
-         
-        </div>
+function renderProjects() {
+  let allCardsHtml = '';
 
-        <div class="card-image">
+  projectData.forEach((project) => {
+    let tagsHtml = '';
+    project.tags.forEach((tag) => {
+      tagsHtml += `<li><a href="#">${tag}</a></li>`;
+    });
+
+    allCardsHtml += `
+      <div class="project-card one">
+        <div class="card-body-text">
+          <h3>${project.title}</h3>
+          <ul class="meta-row">
+            <li><a href="#" class="card-subtitle">${project.sub_title}</a></li>
+            <div class="bullet-dot"></div>
+            <li><a href="#" class="meta-year">${project.project_type}</a></li>
+            <div class="bullet-dot"></div>
+            <li><a href="#" class="meta-year">${project.project_date}</a></li>
+          </ul>
+          <p>${project.description}</p>
+          <ul class="tag-list">${tagsHtml}</ul>
+          <a href="#linked">
+            <button id="${project.id}">See Project</button>
+          </a>
+        </div>
+        <div class="card-img">
           <img class="mob" src="./image/${project.img}" alt="${project.img}" />
         </div>
       </div>
-      `;
+    `;
   });
-  portfolioContainer.innerHTML = projectHtml;
+
+  projectsGrid.innerHTML = allCardsHtml;
 }
 
-listAllProjects();
+renderProjects();
 
-function findProject(id) {
-  const project = data.find((project) => project.id === Number(id));
-  let technologiesHtml = '';
-  if (project.tags.length) {
-    project.tags.forEach((technology) => {
-      technologiesHtml += `<li><a href="#">${technology}</a></li>`;
-    });
-  }
-  modal.innerHTML = `
-  <div class="modal-card">
-  <div class="modal-header">
-      <h1 class="modal-title">${project.title}</h1>
+function openProjectModal(id) {
+  const project = projectData.find((p) => p.id === Number(id));
 
-      <button title="close button" type="button" class="modal-close-btn">
+  let tagsHtml = '';
+  project.tags.forEach((tag) => {
+    tagsHtml += `<li><a href="#">${tag}</a></li>`;
+  });
+
+  overlayWrapper.innerHTML = `
+    <div class="modal-card">
+      <div class="modal-header">
+        <h1 class="modal-title">${project.title}</h1>
+        <button title="close button" type="button" class="modal-close-btn">
           <img src="image/close-btn.png" alt="close" width="100%" />
-      </button>
-  </div>
-  <div class="project-additional-info modal-additional-info">
-      <h5>${project.sub_title}</h5>
-      <div class="dot"></div>
-      <p>${project.project_type}</p>
-      <div class="dot"></div>
-      <p><time datetime="${project.project_date}">${project.project_date}</time></p>
-  </div>
-            
-  <div class="modal-content">
-      <div class="project-information-2">
-          <ul class="tech">
-              ${technologiesHtml}
-          </ul>
-
-          <div class="modal-actions">
-
-              <a target="_blank" type="button" href="${project.liveVersion}" class="button">
-                <button id="${project.id}">
-                live link
-                  <img 
-                      src="./image/see_live.svg"
-                      width="21px"
-                      alt="see live"
-                  />
-                </button>
-              </a>
-
-              <a type="button" href="${project.sourceLink}" class="button">
-
-              <button id="${project.id}">
-                Project files
-                <imgsrc="./image/github_in_button.svg" width="21px" alt="github" />
-              </button>
-              </a>
-          </div>
-
-           <div class="divider"></div>
-
+        </button>
       </div>
 
-  </div>
+      <div class="modal-additional-info">
+        <h5>${project.sub_title}</h5>
+        <div class="bullet-dot"></div>
+        <p>${project.project_type}</p>
+        <div class="bullet-dot"></div>
+        <p><time datetime="${project.project_date}">${project.project_date}</time></p>
+      </div>
 
+      <div class="modal-content">
+        <div class="project-info-panel">
+          <ul class="tag-list">${tagsHtml}</ul>
+          <div class="modal-actions">
+            <a target="_blank" href="${project.liveVersion}" class="button">
+              <button id="${project.id}">
+                live link
+                <img src="./image/see_live.svg" width="21px" alt="see live" />
+              </button>
+            </a>
+            <a href="${project.sourceLink}" class="button">
+              <button id="${project.id}">
+                Project files
+                <img src="./image/github_in_button.svg" width="21px" alt="github" />
+              </button>
+            </a>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
 
-  <p class="project-description">
-  </p>
- 
-
-  <!-- <div class="project-image-container" style="background-image: url('./image/${project.img}');"></div> -->
-</div>
+      <p class="project-desc-text"></p>
+    </div>
   `;
-  modal.classList.remove('close');
+
+  overlayWrapper.classList.remove('close');
   document.body.classList.add('hidescrollbar');
-  modal.addEventListener('click', (e) => {
+
+  overlayWrapper.addEventListener('click', (e) => {
     if (e.target.parentElement.classList.contains('modal-close-btn')) {
-      modal.classList.add('close');
-      modal.innerHTML = '';
+      overlayWrapper.classList.add('close');
+      overlayWrapper.innerHTML = '';
       document.body.classList.remove('hidescrollbar');
     }
   });
 }
 
-portfolioContainer.addEventListener('click', (e) => {
+projectsGrid.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
-    const button = e.target;
-    const id = button.getAttribute('id');
-    findProject(id);
+    const projectId = e.target.getAttribute('id');
+    openProjectModal(projectId);
   }
 });
 
-modal.addEventListener('click', (e) => {
+overlayWrapper.addEventListener('click', (e) => {
   if (e.target.parentElement.classList.contains('popup-cancel')) {
-    modal.classList.add('close');
+    overlayWrapper.classList.add('close');
   }
 });
 
-/* form-validation */
-const form = document.getElementById('form');
-form.addEventListener('submit', (e) => {
-  const validError = document.getElementById('validError');
-  const email = form.elements[1].value;
-  if (email.toLowerCase() !== email) {
-    validError.style.display = 'block';
+/* form validation */
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (e) => {
+  const emailError = document.getElementById('emailValidError');
+  const emailValue = contactForm.elements[1].value;
+  if (emailValue.toLowerCase() !== emailValue) {
+    emailError.style.display = 'block';
     e.preventDefault();
   }
 });
