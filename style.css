@@ -162,12 +162,12 @@
   flex-direction: column;
 }
 
-.profile-row {
+.profile-row, .profile-text {
   margin: 5rem 0;
 }
 
 .profile-row h1,
-.profile-text h2 {
+.profile-text h1,h2 {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -179,7 +179,7 @@
   padding-bottom: 1rem;
 }
 
-.profile-row h3 {
+.profile-row h3, .profile-text h3 {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -191,7 +191,7 @@
   padding-bottom: 1rem;
 }
 
-.intro-text p {
+.intro-text p, .profile-text p {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -580,8 +580,25 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  padding:10px 0;
+  gap: 12px;
   margin-bottom: 15px;
+}
+
+.modal-additional-info h5 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #344563;
+}
+
+.modal-additional-info p {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #7a869a;
+  margin: 0;
 }
 
 .modal-actions {
@@ -879,7 +896,7 @@ body {
   }
 
   .card-body-text {
-    width: 544px;
+    width: 1544px;
     height: 465px;
     margin-bottom: 10px;
     margin-top: 1em;
