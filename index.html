@@ -1,190 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Project</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/1572c8e00b.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Augustine Ayekor | Data Analyst</title>
+<link rel="icon" type="image/jpeg" href="image/imageofme.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <nav class="navbar sticky-top navbar-expand-lg" style="background-color: #fff; border-bottom: 0.00001em solid #b9b8b8;">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="brand-wrap">
-          <a class="navbar-brand" href="#hero-section">Ayekor</a>
+<!-- NAV -->
+<nav>
+  <a href="#home" class="logo">Ayekor<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact" class="nav-cta">Contact me</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"     onclick="closeMobile()">Home</a>
+  <a href="#about"    onclick="closeMobile()">About</a>
+  <a href="#skills"   onclick="closeMobile()">Skills</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#contact"  onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">Available for work</div>
+      <h1 class="hero-name">
+        Hi, I'm<br>Augustine<br><span class="accent">Ayekor.</span>
+      </h1>
+      <p class="hero-role">Data Analyst · Power BI · Python · SQL</p>
+      <p class="hero-bio">Specialized in transforming complex data into actionable insights and meaningful visualizations, empowering organizations to make impactful decisions.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Contact me →</a>
+        <a href="#projects" class="btn-outline">View my work</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">2+</div>
+          <div class="stat-label">Projects</div>
         </div>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#bio">About Me</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#reach-out">Contact</a></li>
-          </ul>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Core Tools</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Committed</div>
         </div>
       </div>
-    </nav>
-
-    <section class="hero-section" id="hero-section">
-      <div class="container intro-wrapper intro-layout">
-        <div class="row profile-row">
-
-          <div class="d-none d-lg-block col-sm-3">
-            <img src="image/imageofme.jpg" class="img-fluid img-thumbnail" alt="Augustine Ayekor" />
-          </div>
-
-          <div class="col-12 col-sm-9">
-            <div class="intro-text">
-              <h1>Augustine Ayekor</h1>
-              <h3>Data Analyst | Data Driven Solutions</h3>
-              <p>Specialized in transforming complex data into actionable insights and meaningful visualizations, empowering organizations to make impactful decisions.</p>
-            </div>
-            <div class="connect-block"><br/><br/><br/><br/>
-              <div class="connect-label"><h4>LET'S CONNECT</h4></div>
-              <div class="connect-links">
-                <ul>
-                  <li><a href="https://www.linkedin.com/in/augustine-ayekor/"><i class="fa-brands fa-linkedin"></i></a></li>
-                  <li><a href="https://github.com/ayekor"><i class="fa-brands fa-github"></i></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-6 d-lg-none offset-3">
-            <img src="image/imageofme.jpg" class="img-fluid img-thumbnail" alt="Augustine Ayekor" />
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="bio" id="bio">
-      <div class="bio-inner">
-        <div class="bio-left">
-          <div class="profile-text">
-            <h2>About Me</h2>
-            <p class="bio-paragraph">
-              I am Augustine Ayekor, a data analytics professional with a BSc in Computer Science from KNUST and an MSc in Electrical and Computer Engineering from Carnegie Mellon University. With over five years of experience, I specialize in developing data-driven solutions that improve operational efficiency and drive revenue growth across the banking/finance industry and the energy sector.
-            </p>
-          </div>
-          <div class="connect-block">
-            <div class="connect-label bio-connect"><h4>LET'S CONNECT</h4></div>
-            <div class="link-icons">
-              <ul>
-                <li><a href="https://github.com/ayekor"><i class="fa-brands fa-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/augustine-ayekor/"><i class="fa-brands fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion bio-right" id="accordionPanelsStayOpenExample"><br><br>
-          <div class="accordion-item" style="border: none;">
-            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">Tech Stack</button>
-            </h2>
-            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-              <div class="accordion-body">
-                <ul class="skills-list">
-                  <li class="skill-item"><img src="./image/Python_logo.png" style="width:70px;height:70px;padding:5px;" alt="python"/><p>Python</p></li>
-                  <li class="skill-item"><img src="./image/sql.png" style="width:70px;height:70px;padding:5px;" alt="sql"/><p>SQL</p></li>
-                  <li class="skill-item"><img src="./image/excel.png" style="width:70px;height:70px;padding:5px;" alt="excel"/><p>Excel</p></li>
-                  <li class="skill-item"><img src="./image/pyspark.png" style="width:70px;height:70px;padding:5px;" alt="pyspark"/><p>PySpark</p></li>
-                  <li class="skill-item"><img src="./image/powerbi.png" style="width:70px;height:70px;padding:5px;" alt="powerbi"/><p>Power BI</p></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item" style="border: none;">
-            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">Soft Skills</button>
-            </h2>
-            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
-              <div class="accordion-body">
-                <ul>
-                  <li>Effective Communication</li>
-                  <li>Problem Solving</li>
-                  <li>Collaboration / Teamwork</li>
-                  <li>Critical Thinking</li>
-                  <li>Attention to Details</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item" style="border: none;">
-            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">Certifications</button>
-            </h2>
-            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
-              <div class="accordion-body">
-                <ul>
-                  <li>
-                    <a href="https://learn.microsoft.com/en-us/users/augustineayekor-7385/credentials/b9aa5dc45d13aa94?ref=https%3A%2F%2Fwww.linkedin.com%2F">Microsoft Certified: Fabric Analytics Engineer Associate</a><br/>
-                    <img src="https://learn.microsoft.com/en-gb/media/learn/certification/badges/microsoft-certified-associate-badge.svg" width="80px" height="80px"/>
-                  </li><br/>
-                  <li>
-                    <a href="https://www.credly.com/badges/11525080-95da-4ca6-aa79-9921dd083228/linked_in_profile">Professional Data Engineer Certification</a><br/>
-                    <img src="https://images.credly.com/size/340x340/images/2d613ff8-8879-430b-b2d8-925fa29785e8/image.png" width="80px" height="80px"/>
-                  </li><br/>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="hamburger-btn" id="hamburger-btn"></div>
-
-    <section class="projects-grid" id="projects"></section>
-
-    <section class="overlay-wrapper close"></section>
-
-    <footer class="contact-footer" id="reach-out">
-      <div class="contact-inner">
-        <h2>Contact me</h2>
-        <p class="contact-info">augustineayekor@gmail.com | +233 24 814 6575</p>
-        <form action="https://formspree.io/f/xkgezdga" method="post" id="contact-form">
-          <label for="fullname"></label>
-          <input type="text" id="fullname" name="name" maxlength="30" placeholder="your name" required/>
-          <label for="user-email"></label>
-          <input type="email" id="user-email" name="email" placeholder="enter email address" required/>
-          <label for="user-message"></label>
-          <textarea id="user-message" name="message" maxlength="500" rows="5" cols="50" placeholder="Write your message here" required></textarea>
-          <span class="input-error email-error" id="emailValidError">Please fill in your email address in lower case</span>
-          <button type="submit" id="submit-btn" class="cta-btn">Get In Touch</button>
-        </form>
-      </div>
-    </footer>
-
-    <div class="site-footer">
-      Copyright © <b>2026</b>. All rights reserved
     </div>
+    <div class="hero-avatar">
+      <img src="image/imageofme.jpg" alt="Augustine Ayekor">
+    </div>
+  </div>
+</section>
 
-    <script>
-      document.getElementById("contact-form").addEventListener("submit", async function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const data = new FormData(form);
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          alert("Form submitted. Thank you.");
-        } else {
-          alert("There was an error sending your message. Please try again.");
-        }
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-  </body>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-tag">Who I am</div>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>I'm Augustine Ayekor, a Data Analyst passionate about turning raw data into clear, compelling stories that drive real decisions. I work at the intersection of data engineering, analytics, and visualization.</p>
+        <p>My work spans building interactive dashboards in Power BI, writing efficient SQL queries, and applying Python for data wrangling and analysis. I believe good data work isn't just technically sound — it's understandable to the people who need it most.</p>
+        <p>I'm currently exploring machine learning to extend my analytical capabilities into predictive modelling and AI-powered insights.</p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card">
+          <div class="about-card-icon">📊</div>
+          <h4>Analytics</h4>
+          <p>Transforming raw datasets into clear, actionable insights</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">📈</div>
+          <h4>Visualization</h4>
+          <p>Building dashboards that tell the right story</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">🤖</div>
+          <h4>ML (Learning)</h4>
+          <p>Expanding into predictive and AI-driven analysis</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">🎯</div>
+          <h4>Impact</h4>
+          <p>Empowering organizations to make data-driven decisions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-tag">What I work with</div>
+    <h2 class="section-title">Skills & Tools</h2>
+    <p class="section-sub">A focused toolkit built for real-world data work — from querying and wrangling to building production dashboards.</p>
+    <div class="skills-layout reveal">
+      <div class="skill-bars">
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">Power BI</span>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width:90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">SQL</span>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width:90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">Python</span>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width:85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">DAX</span>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width:90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top">
+            <span class="skill-name">Data Visualization</span>
+            <span class="skill-pct">95%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" style="width:95%"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;">Tools</p>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-icon">📊</div>
+            <div class="tool-name">Power BI</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
+            <div class="tool-name">Python</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🗄️</div>
+            <div class="tool-name">SQL</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">🐼</div>
+            <div class="tool-name">Pandas</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon">📓</div>
+            <div class="tool-name">Jupyter</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel"></div>
+            <div class="tool-name">Excel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-tag">My work</div>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Real-world analytical projects built to solve meaningful problems with data.</p>
+    <div class="projects-grid reveal">
+
+      <div class="project-card">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+          📋
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Dashboard</div>
+          <h3 class="project-name">HR Request Tracker</h3>
+          <p class="project-desc">An interactive HR dashboard for tracking employee requests, monitoring resolution times, and surfacing workforce trends to support smarter HR decisions.</p>
+          <div class="project-techs">
+            <span class="tech-chip">Power BI</span>
+            <span class="tech-chip">DAX</span>
+            <span class="tech-chip">Google Sheets</span>
+            <span class="tech-chip">Google Forms</span>
+          </div>
+          <div class="project-links">
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiYTQxMzRmMWYtNTNkMC00NzA1LWFkYzEtN2Y4YjlhNTA3YTdhIiwidCI6ImQ5NDZmYzkzLWFmNzAtNGU4Yy1hYmRjLTZlOWFhNDQxYmUwZSIsImMiOjF9" class="project-link" target="_blank" rel="noopener">Live Demo →</a> <br>
+            <a href="https://github.com/ayekor/HR-Requests-Tracker" class="project-link project-link-gh" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#0f2027,#203a43)">
+          📈
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Market Analysis</div>
+          <h3 class="project-name">Ghana Stock Exchange Analysis</h3>
+          <p class="project-desc">A comprehensive market overview dashboard analysing GSE share prices, trading volumes, and company performance trends across the Ghanaian equity market.</p>
+          <div class="project-techs">
+            <span class="tech-chip">Databricks</span>
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">SQL</span>
+            <span class="tech-chip">Power BI</span>
+            <span class="tech-chip">DAX</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link" target="_blank" rel="noopener">Live Demo →</a> <br>
+            <a href="#" class="project-link project-link-gh" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Get in touch</div>
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="section-sub">Have a project in mind or want to discuss data? I'd love to hear from you.</p>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail">
+            <h4>Email</h4>
+            <p>augustineayekor@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div class="contact-detail">
+            <h4>Phone</h4>
+            <p>0248146575</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail">
+            <h4>Location</h4>
+            <p>Ghana</p>
+          </div>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/xkgezdga" method="post" class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" name="subject" placeholder="What's this about?">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" name="message" placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#home" class="footer-logo">Augustine<span>.</span></a>
+  <p class="footer-copy">© 2026 Augustine Ayekor. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="mailto:augustineayekor@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/augustine-ayekor/">LinkedIn</a> 
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+function closeMobile() { mobileMenu.classList.remove('open'); }
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.btn-submit');
+  const original = btn.textContent;
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => {
+    if (res.ok) {
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#2E7D52';
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    } else {
+      btn.textContent = 'Failed — Try Again';
+      btn.style.background = '#c0392b';
+      btn.disabled = false;
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Failed — Try Again';
+    btn.style.background = '#c0392b';
+    btn.disabled = false;
+  });
+}
+
+// Active nav highlight
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
+  });
+});
+</script>
+</body>
 </html>
