@@ -630,6 +630,21 @@ section { padding: 6rem 5%; }
 
 .project-link:hover { gap: 0.7rem; }
 
+.wip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(124,108,250,0.1);
+  border: 1px dashed var(--accent2);
+  color: var(--accent2);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+}
+
 .project-link-gh {
   color: var(--muted);
   border: 1px solid var(--border);
