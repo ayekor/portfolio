@@ -19,7 +19,10 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact" class="nav-cta">Contact me</a></li>
   </ul>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀️</button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <span class="theme-icon">🌙</span>
+    <span class="theme-label">Dark Theme</span>
+  </button>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -357,14 +360,20 @@
 <script>
 // Theme toggle
 const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle.querySelector('.theme-icon');
+const themeLabel = themeToggle.querySelector('.theme-label');
+
 const savedTheme = localStorage.getItem('theme_v2') || 'light';
 document.documentElement.setAttribute('data-theme', savedTheme);
-themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+themeLabel.textContent = savedTheme === 'dark' ? 'Light Theme' : 'Dark Theme';
+
 themeToggle.addEventListener('click', () => {
   const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('theme_v2', next);
-  themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+  themeIcon.textContent = next === 'dark' ? '☀️' : '🌙';
+  themeLabel.textContent = next === 'dark' ? 'Light Theme' : 'Dark Theme';
 });
 
 // Mobile menu

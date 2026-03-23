@@ -99,21 +99,32 @@ nav {
 .theme-toggle {
   background: none;
   border: 1px solid var(--border);
-  border-radius: 50%;
-  width: 34px;
+  border-radius: 20px;        /* pill shape to fit the label */
+  padding: 0 12px;
   height: 34px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+  gap: 6px;                   /* space between icon and text */
+  font-size: 0.9rem;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
   flex-shrink: 0;
+  white-space: nowrap;
+  color: var(--text, inherit);
 }
 
 .theme-toggle:hover {
   border-color: var(--accent);
-  background: rgba(212,168,67,0.1);
+  background: rgba(212, 168, 67, 0.1);
+}
+
+.theme-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.theme-label {
+  font-size: 0.85rem;
 }
 
 .hamburger {
